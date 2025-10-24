@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portofolio - Ahmad Abyan</title>
+  <style>
+    /* === Tema Monokrom Minimalis === */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background-color: #111;
+      color: #f5f5f5;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    /* === Animasi Fade In === */
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    header {
+      background: #1a1a1a;
+      text-align: center;
+      padding: 35px 20px;
+      border-bottom: 2px solid #333;
+      animation: fadeIn 1s ease-out;
+    }
+
+    header h1 {
+      font-size: 2.6em;
+      color: #fff;
+      letter-spacing: 2px;
+    }
+
+    header p {
+      color: #aaa;
+      font-size: 1.1em;
+      margin-top: 10px;
+      animation: fadeIn 1.5s ease-out;
+    }
+
+    nav {
+      background: #000;
+      display: flex;
+      justify-content: center;
+      padding: 12px;
+      border-bottom: 1px solid #333;
+      animation: fadeIn 1.5s ease-out;
+    }
+
+    nav a {
+      color: #f5f5f5;
+      text-decoration: none;
+      font-size: 1rem;
+      margin: 0 18px;
+      font-weight: 500;
+      transition: 0.3s;
+      position: relative;
+    }
+
+    nav a::after {
+      content: "";
+      position: absolute;
+      width: 0%;
+      height: 2px;
+      left: 0;
+      bottom: -4px;
+      background: #f5f5f5;
+      transition: 0.3s;
+    }
+
+    nav a:hover::after {
+      width: 100%;
+    }
+
+    nav a:hover {
+      color: #999;
+    }
+
+    section {
+      padding: 60px 20px;
+      max-width: 900px;
+      margin: auto;
+      animation: fadeIn 1s ease-out;
+      animation-fill-mode: both;
+    }
+
+    h2 {
+      border-left: 5px solid #555;
+      padding-left: 10px;
+      margin-bottom: 20px;
+      color: #fff;
+    }
+
+    /* === Foto Profil Bulat === */
+    .profile {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-bottom: 30px;
+    }
+
+    .profile img {
+      width: 130px;
+      height: 130px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid #444;
+      filter: grayscale(100%);
+      transition: all 0.5s ease;
+      box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+    }
+
+    .profile img:hover {
+      filter: grayscale(0%);
+      transform: scale(1.05);
+      box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+    }
+
+    .about, .projects, .contact {
+      margin-bottom: 60px;
+    }
+
+    .project-card {
+      background: #1a1a1a;
+      padding: 20px;
+      border-radius: 10px;
+      margin-bottom: 15px;
+      border: 1px solid #333;
+      transition: 0.4s ease;
+      opacity: 0.95;
+    }
+    .project-card h3 {
+  font-size: 1.3em; /* agak diperbesar dari teks biasa */
+  font-weight: 700; /* biar tetap tegas */
+  margin-bottom: 8px;
+  color: var(--color-primary, #fff); /* tetap konsisten dengan tema */
+  letter-spacing: 0.5px;
+}
+.project-card h3 {
+  font-size: 1.3em;
+  font-weight: 700;
+  border-left: 3px solid #888;
+  padding-left: 10px;
+  margin-bottom: 8px;
+  color: #fff;
+}
+.project-card p {
+  font-size: 0.95em; /* sedikit lebih kecil */
+  font-weight: 400; /* lebih ringan supaya beda dari judul */
+  line-height: 1.6;
+  color: var(--color-secondary, #ccc);
+}
+
+
+    .project-card:hover {
+      transform: scale(1.03);
+      background: #222;
+      box-shadow: 0 0 20px rgba(255, 255, 255, 0.05);
+      opacity: 1;
+    }
+
+    footer {
+      text-align: center;
+      padding: 30px;
+      background: #000;
+      color: #777;
+      font-size: 0.9em;
+      border-top: 1px solid #333;
+      animation: fadeIn 1.5s ease-out;
+    }
+
+    .btn {
+      display: inline-block;
+      background: #f5f5f5;
+      color: #111;
+      padding: 8px 12px;
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: bold;
+      margin-top: 10px;
+      transition: 0.3s;
+    }
+
+    .btn:hover {
+      background: #ddd;
+      transform: scale(1.05);
+    }
+
+    /* === Responsif untuk HP === */
+    @media (max-width: 768px) {
+      header h1 {
+        font-size: 2em;
+      }
+      nav {
+        flex-wrap: wrap;
+      }
+      nav a {
+        margin: 8px;
+        
+      }
+      section {
+        padding: 40px 15px;
+      }
+      a {
+        font-weight: 700;
+  color: inherit; /* biar warnanya ikut teks di sekitarnya */
+  text-decoration: none; /* hilangkan garis bawah */
+}
+
+a:hover {
+  text-decoration: underline; /* efek hover biar tetap jelas kalau bisa diklik */
+}
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Ahmad Abyan</h1>
+    <p>Pelajar | Tech Enthusiast | Exploring, Learning, Creating</p>
+  </header>
+
+  <nav>
+    <a href="#about">Tentang</a>
+    <a href="#projects">Projek</a>
+    <a href="#contact">Kontak</a>
+  </nav>
+
+  <section id="about" class="about">
+    <h2>Tentang Saya</h2>
+
+    <div class="profile">
+      <!-- Ganti foto ini dengan fotomu, misalnya "foto.jpg" -->
+      <img src="pp.jpg" alt="Foto Profil Ahmad Abyan">
+    </div>
+
+    <p>Halo! Saya <b>Ahmad Abyan</b>, pelajar jurusan Teknik Komputer dan Jaringan. Saya sedang belajar membuat website sederhana menggunakan HTML dan CSS. Tujuan saya adalah terus belajar hingga bisa membuat website yang profesional dan interaktif.</p>
+  </section>
+
+  <section id="projects" class="projects">
+    <h2>Projek Saya</h2>
+    <div class="project-card">
+      <h3>Website Monokrom</h3>
+      <p>Website portofolio ini merupakan hasil eksperimen saya menggunakan HTML dan CSS murni, tanpa framework. Desainnya sederhana tapi tetap terlihat modern dan elegan.</p>
+    </div>
+    <div class="project-card">
+      <h3>Simulasi Arduino Uno</h3>
+      <p>Dalam proyek ini, saya membuat simulasi Arduino Uno yang menyalakan lampu menggunakan logika XOR.</p>
+    </div>
+  </section>
+
+  <section id="contact" class="contact">
+    <h2>Kontak</h2>
+    <p>Ingin berkomunikasi? Hubungi saya melalui:</p>
+    <p>Email: <b>abyanrsyd@yahoo.com</b></p>
+    <p>Instagram: <a href="https://www.instagram.com/abyan7410h?igsh=MWZ0aW9uNm01bjhkeQ==">@abyan7410h</a></p><br>
+    <a href="#top" class="btn">Kembali ke atas</a>
+  </section>
+
+  <footer>
+    <p><b>.⁠·⁠´⁠¯⁠`⁠(⁠>⁠▂⁠<⁠)⁠´⁠¯⁠`⁠·⁠.</b></p>
+  </footer>
+
+</body>
+</html>
